@@ -1,0 +1,39 @@
+
+npx sequelize-cli
+
+npx sequelize seed:generate --name add-countries
+export default {
+  up: async (queryInterface) => queryInterface.bulkInsert('countries', [
+    {
+      countryUUID: '27c66275-e9da-45c8-9c72-142ab11b168e',
+	  countryCode:'IND',
+	  countryName: 'INDIA',
+	  isEnable:1,
+	  dialCode:'+91',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+  ], {}),
+  down: async (queryInterface) => {
+    await queryInterface.bulkDelete('countries', {[Op.or]: [{name: 'USD'},);
+  }
+};
+
+
+
+Create Creator post request args
+
+{
+    "ctName":"GIRIRAGHAVA",
+    "companyId":1,
+    "countryId":1,
+    "ctMail":"giriraghava1970@santhila.co",
+    "ctDesignation":"Tech Manager",
+    "ctAge":52,
+    "ctGender":"Male",
+    "cpCreatedUserId":1
+}
+
+INSERT INTO `lmscreators` (`ctId`,`ctUUID`,`ctName`,`ctMail`,`ctDesignation`,`ctAge`,`ctGender`,`ctStatus`,`ctCreatedDate`,`ctDeleteStatus`,`ctUserAgent`,`ctTimeStamp`,`createdAt`,`updatedAt`,`countryId`,`companyId`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
+
+?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?
